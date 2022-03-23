@@ -37,7 +37,7 @@ class _StreamApiCallState extends State<StreamApiCall> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Stream API Call'),
+        const Text('Stream API Call'),
         Flexible(
           child: ListView.builder(
             itemCount: apiData.length,

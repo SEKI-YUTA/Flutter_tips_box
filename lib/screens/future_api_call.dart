@@ -16,12 +16,12 @@ class FutureApiCall extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Future API Call'),
+        const Text('Future API Call'),
         FutureBuilder<List>(
           future: getData(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
