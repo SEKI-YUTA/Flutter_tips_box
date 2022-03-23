@@ -11,7 +11,7 @@ class CardListScreen extends StatelessWidget {
       child: ListView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {
-          return RotationCard();
+          return const RotationCard();
         },
       ),
     );

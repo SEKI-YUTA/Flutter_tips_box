@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class GridScreen extends StatelessWidget {
   GridScreen({Key? key}) : super(key: key);
 
-  List<Widget> _items = List.generate(
+  final List<Widget> _items = List.generate(
       100,
       (index) => Container(
             child: Center(
@@ -19,7 +19,7 @@ class GridScreen extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: [
-          Text('Grid Screen'),
+          const Text('Grid Screen'),
           Flexible(
             child: GridView.count(
               crossAxisCount: 2,

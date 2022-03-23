@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   ResponsiveLayout({Key? key}) : super(key: key);
-  final Widget itemA = Expanded(
+  final Widget itemA = const Expanded(
     child: Center(
       child: Text(
         'ItemA',
@@ -10,7 +10,7 @@ class ResponsiveLayout extends StatelessWidget {
       ),
     ),
   );
-  final Widget itemB = Expanded(
+  final Widget itemB = const Expanded(
     child: Center(
       child: Text(
         'ItemB',
@@ -18,7 +18,7 @@ class ResponsiveLayout extends StatelessWidget {
       ),
     ),
   );
-  final Widget itemC = Expanded(
+  final Widget itemC = const Expanded(
     child: Center(
       child: Text(
         'ItemC',
