@@ -6,6 +6,7 @@ import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
 import 'package:tips_box/screens/card_list_screen.dart';
+import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
@@ -56,7 +57,8 @@ class MainPage extends StatelessWidget {
         child: Column(
           children: [
             // CrossFadeWidget(),
-            ResponsiveLayout(),
+            // ResponsiveLayout(),
+            DragAndDropScreen()
           ],
         ),
       ),
