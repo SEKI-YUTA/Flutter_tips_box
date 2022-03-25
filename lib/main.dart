@@ -2,12 +2,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tips_box/layout/responsive_layout.dart';
+import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
 import 'package:tips_box/screens/card_list_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
+import 'package:tips_box/widget/cross_fade_widget.dart';
 import 'package:tips_box/widget/linear_flow_widget.dart';
 
 void main() {
@@ -48,7 +50,16 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flow Widget'),
       ),
-      body: ResponsiveLayout(),
+      body: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          children: [
+            // CrossFadeWidget(),
+            ResponsiveLayout(),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -29,26 +29,33 @@ class ResponsiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth < 780) {
-        return Column(
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height:
+          MediaQuery.of(context).size.height - (AppBar().preferredSize.height),
+      child: LayoutBuilder(builder: (context, constraints) {
+        if (constraints.maxWidth < 780) {
+          return Flexible(
+            child: Column(
+              children: [itemA, itemB, itemC],
+            ),
+          );
+        }
+        if (constraints.maxWidth < 1270) {
+          return Column(
+            children: [
+              Row(
+                children: [itemA, itemB],
+              ),
+              itemC
+            ],
+          );
+        }
+
+        return Row(
           children: [itemA, itemB, itemC],
         );
-      }
-      if (constraints.maxWidth < 1270) {
-        return Column(
-          children: [
-            Row(
-              children: [itemA, itemB],
-            ),
-            itemC
-          ],
-        );
-      }
-
-      return Row(
-        children: [itemA, itemB, itemC],
-      );
-    });
+      }),
+    );
   }
 }
