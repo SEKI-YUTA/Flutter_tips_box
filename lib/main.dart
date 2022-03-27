@@ -10,6 +10,7 @@ import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
+import 'package:tips_box/widget/NeumophismButton.dart';
 import 'package:tips_box/widget/cross_fade_widget.dart';
 import 'package:tips_box/widget/linear_flow_widget.dart';
 
@@ -48,6 +49,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[50],
       appBar: AppBar(
         title: Text('Flow Widget'),
       ),
@@ -55,10 +57,12 @@ class MainPage extends StatelessWidget {
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // CrossFadeWidget(),
             // ResponsiveLayout(),
-            DragAndDropScreen()
+            // DragAndDropScreen(),
+            NeumophismButton()
           ],
         ),
       ),
