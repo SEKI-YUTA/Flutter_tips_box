@@ -9,8 +9,10 @@ import 'package:tips_box/screens/card_list_screen.dart';
 import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
+import 'package:tips_box/screens/slidable_list_screent.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
+import 'package:tips_box/widget/call_phone_widget.dart';
 import 'package:tips_box/widget/cross_fade_widget.dart';
 import 'package:tips_box/widget/linear_flow_widget.dart';
 
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -53,19 +56,21 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flow Widget'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // CrossFadeWidget(),
-            // ResponsiveLayout(),
-            // DragAndDropScreen(),
-            NeumophismButton()
-          ],
-        ),
-      ),
+      // body: Container(
+      //   width: double.infinity,
+      //   height: MediaQuery.of(context).size.height,
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       // CrossFadeWidget(),
+      //       // ResponsiveLayout(),
+      //       // DragAndDropScreen(),
+      //       NeumophismButton(),
+      //       CallPhoneWidget()
+      //     ],
+      //   ),
+      // ),
+      body: SlidableListScreen(),
     );
   }
 }
