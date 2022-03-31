@@ -13,16 +13,25 @@ class SlidableListScreen extends StatefulWidget {
 }
 
 class _SlidableListScreenState extends State<SlidableListScreen> {
+  ScrollController _scrollController = ScrollController();
   List data = [];
   @override
   void initState() {
     super.initState();
     fetchData();
+
+    _scrollController.addListener(() {
+      print('_scrollController.offset: ${_scrollController.offset}');
+      if (_scrollController.position.maxScrollExtent ==
+          _scrollController.offset) {
+        fetchMoreData();
+      }
+    });
   }
 
   void fetchData() async {
     var res =
-        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/todos'));
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
     var decoded = utf8.decode(res.bodyBytes);
     var jsonResponse = json.decode(decoded);
     print('sample data');
@@ -32,11 +41,24 @@ class _SlidableListScreenState extends State<SlidableListScreen> {
     });
   }
 
+  void fetchMoreData() async {
+    var res =
+        await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
+    var decoded = utf8.decode(res.bodyBytes);
+    var jsonResponse = json.decode(decoded);
+    print('sample data');
+    print(jsonResponse[0]);
+    setState(() {
+      data = [...data, ...jsonResponse];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
-        itemCount: data.length,
+        controller: _scrollController,
+        itemCount: data.length + 1,
         itemBuilder: (context, index) {
           return _buildListItem(
             index: index,
@@ -49,42 +71,50 @@ class _SlidableListScreenState extends State<SlidableListScreen> {
   Widget _buildListItem({
     required int index,
   }) {
-    return Slidable(
-      key: const ValueKey(0),
-      startActionPane: ActionPane(
-        motion: const ScrollMotion(),
-        dismissible: DismissiblePane(
-          onDismissed: () {},
-        ),
-        children: [
-          SlidableAction(
-            onPressed: (BuildContext context) {
-              deleteData(data[index]["id"]);
-            },
-            backgroundColor: Colors.red,
-            foregroundColor: Colors.white,
-            icon: Icons.delete,
-            label: 'delete',
+    if (index < data.length) {
+      return Slidable(
+        key: const ValueKey(0),
+        startActionPane: ActionPane(
+          motion: const ScrollMotion(),
+          dismissible: DismissiblePane(
+            onDismissed: () {},
           ),
-          SlidableAction(
-            onPressed: (BuildContext context) {
-              editData(data[index]["id"]);
-            },
-            backgroundColor: Colors.green,
-            foregroundColor: Colors.white,
-            icon: Icons.edit,
-            label: 'edit',
-          ),
-        ],
-      ),
-      child: ListTile(
-        leading: Text(
-          'No:${data[index]["id"]}',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          children: [
+            SlidableAction(
+              onPressed: (BuildContext context) {
+                deleteData(data[index]["id"]);
+              },
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+              icon: Icons.delete,
+              label: 'delete',
+            ),
+            SlidableAction(
+              onPressed: (BuildContext context) {
+                editData(data[index]["id"]);
+              },
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              icon: Icons.edit,
+              label: 'edit',
+            ),
+          ],
         ),
-        title: Text(data[index]["title"]),
-      ),
-    );
+        child: ListTile(
+          leading: Text(
+            'No:${data[index]["id"]}',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          title: Text(data[index]["name"]),
+          subtitle: Text(data[index]["email"]),
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.all(10),
+        child: Center(child: CircularProgressIndicator()),
+      );
+    }
   }
 
   void deleteData(int id) {
@@ -104,10 +134,10 @@ class _SlidableListScreenState extends State<SlidableListScreen> {
             )));
   }
 
-  void updateData(int id, String newTitle) {
+  void updateData(int id, String newName) {
     var updated = data.map((element) {
       if (element["id"] == id) {
-        element["title"] = newTitle;
+        element["name"] = newName;
         return element;
       }
       return element;
