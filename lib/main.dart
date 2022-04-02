@@ -6,6 +6,7 @@ import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
 import 'package:tips_box/screens/card_list_screen.dart';
+import 'package:tips_box/screens/download_list_screen.dart';
 import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
@@ -56,25 +57,25 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
-        title: Text('Flow Widget'),
+        title: Text('TipsBox'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // CrossFadeWidget(),
-            // ResponsiveLayout(),
-            // DragAndDropScreen(),
-            AnimatedTitle(),
-            LikeButton(),
-            NeumophismButton(),
-            CallPhoneWidget()
-          ],
-        ),
-      ),
-      // body: SlidableListScreen(),
+      // body: Container(
+      //   width: double.infinity,
+      //   height: MediaQuery.of(context).size.height,
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       // CrossFadeWidget(),
+      //       // ResponsiveLayout(),
+      //       // DragAndDropScreen(),
+      //       AnimatedTitle(),
+      //       LikeButton(),
+      //       NeumophismButton(),
+      //       CallPhoneWidget()
+      //     ],
+      //   ),
+      // ),
+      body: DownloadListScreen(),
     );
   }
 }
