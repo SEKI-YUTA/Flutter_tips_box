@@ -15,6 +15,7 @@ import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
 import 'package:tips_box/widget/animated_title.dart';
 import 'package:tips_box/widget/call_phone_widget.dart';
+import 'package:tips_box/widget/clip_path_widget.dart';
 import 'package:tips_box/widget/cross_fade_widget.dart';
 import 'package:tips_box/widget/like_button.dart';
 import 'package:tips_box/widget/linear_flow_widget.dart';
@@ -59,23 +60,24 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('TipsBox'),
       ),
-      // body: Container(
-      //   width: double.infinity,
-      //   height: MediaQuery.of(context).size.height,
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: [
-      //       // CrossFadeWidget(),
-      //       // ResponsiveLayout(),
-      //       // DragAndDropScreen(),
-      //       AnimatedTitle(),
-      //       LikeButton(),
-      //       NeumophismButton(),
-      //       CallPhoneWidget()
-      //     ],
-      //   ),
-      // ),
-      body: DownloadListScreen(),
+      body: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // CrossFadeWidget(),
+            // ResponsiveLayout(),
+            // DragAndDropScreen(),
+            ClipPathWidget(),
+            AnimatedTitle(),
+            LikeButton(),
+            NeumophismButton(),
+            CallPhoneWidget()
+          ],
+        ),
+      ),
+      // body: DownloadListScreen(),
     );
   }
 }
