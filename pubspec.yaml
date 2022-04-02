@@ -39,6 +39,7 @@ dependencies:
   flutter_inset_box_shadow: ^1.0.7
   url_launcher: ^6.0.20
   flutter_slidable: ^1.2.0
+  percent_indicator: ^4.0.0
 
 dev_dependencies:
   flutter_test:
