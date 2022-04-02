@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tips_box/layout/responsive_layout.dart';
+import 'package:tips_box/pages/edge_detection_page.dart';
+import 'package:tips_box/pages/navigation_drawer_3d.dart';
 import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: NavigationDrawer3D(),
     );
   }
 }
@@ -60,24 +62,23 @@ class MainPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('TipsBox'),
       ),
-      body: Container(
-        width: double.infinity,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // CrossFadeWidget(),
-            // ResponsiveLayout(),
-            // DragAndDropScreen(),
-            ClipPathWidget(),
-            AnimatedTitle(),
-            LikeButton(),
-            NeumophismButton(),
-            CallPhoneWidget()
-          ],
-        ),
-      ),
-      // body: DownloadListScreen(),
+      // body: Container(
+      //   width: double.infinity,
+      //   height: MediaQuery.of(context).size.height,
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       // CrossFadeWidget(),
+      //       // ResponsiveLayout(),
+      //       // DragAndDropScreen(),
+      //       ClipPathWidget(),
+      //       AnimatedTitle(),
+      //       LikeButton(),
+      //       NeumophismButton(),
+      //       CallPhoneWidget()
+      //     ],
+      //   ),
+      // ),
     );
   }
 }
