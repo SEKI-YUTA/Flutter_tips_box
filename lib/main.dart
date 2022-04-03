@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tips_box/layout/responsive_layout.dart';
 import 'package:tips_box/pages/edge_detection_page.dart';
+import 'package:tips_box/pages/my_scaffold_3d.dart';
 import 'package:tips_box/pages/navigation_drawer_3d.dart';
 import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
@@ -12,6 +13,7 @@ import 'package:tips_box/screens/download_list_screen.dart';
 import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
+import 'package:tips_box/screens/my_animation_screen.dart';
 import 'package:tips_box/screens/slidable_list_screent.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: NavigationDrawer3D(),
+      home: MainPage(),
     );
   }
 }
@@ -57,6 +59,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print("padding top: ${MediaQuery.of(context).padding.top}");
+
     return Scaffold(
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
@@ -79,6 +83,8 @@ class MainPage extends StatelessWidget {
       //     ],
       //   ),
       // ),
+      body: MyAnimationScreen(
+          statusBarHeight: MediaQuery.of(context).padding.top),
     );
   }
 }
