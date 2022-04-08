@@ -5,6 +5,8 @@ import 'package:tips_box/layout/responsive_layout.dart';
 import 'package:tips_box/pages/edge_detection_page.dart';
 import 'package:tips_box/pages/my_scaffold_3d.dart';
 import 'package:tips_box/pages/navigation_drawer_3d.dart';
+import 'package:tips_box/pages/navigation_drawer_joke.dart';
+import 'package:tips_box/pages/navigation_drawer_rotated.dart';
 import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
@@ -15,6 +17,7 @@ import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/mask_text_screen.dart';
 import 'package:tips_box/screens/my_animation_screen.dart';
+import 'package:tips_box/screens/parallax_list_screen.dart';
 import 'package:tips_box/screens/slidable_list_screent.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
@@ -86,7 +89,7 @@ class MainPage extends StatelessWidget {
       // ),
       // body: MyAnimationScreen(
       //     statusBarHeight: MediaQuery.of(context).padding.top),
-      body: MaskTextScreen(),
+      body: ParallaxListScreen(),
     );
   }
 }
