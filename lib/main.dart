@@ -18,6 +18,7 @@ import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/mask_text_screen.dart';
 import 'package:tips_box/screens/my_animation_screen.dart';
 import 'package:tips_box/screens/parallax_list_screen.dart';
+import 'package:tips_box/screens/photo_filter_screen.dart';
 import 'package:tips_box/screens/slidable_list_screent.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
@@ -89,7 +90,7 @@ class MainPage extends StatelessWidget {
       // ),
       // body: MyAnimationScreen(
       //     statusBarHeight: MediaQuery.of(context).padding.top),
-      body: ParallaxListScreen(),
+      body: PhotoFilterSection(),
     );
   }
 }
