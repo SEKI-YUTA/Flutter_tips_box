@@ -18,16 +18,6 @@ class _MyAnimationScreenState extends State<MyAnimationScreen> {
   @override
   void initState() {
     super.initState();
-    // Timer.periodic(Duration(milliseconds: 500), (timer) {
-    //   // print(timer.tick);
-    //   if (_fromleft < MediaQuery.of(context).size.width - _boxSize) {
-    //     // まだ右端についてなかったら
-    //     print('move horizontal');
-    //     setState(() {
-    //       _fromleft += 10;
-    //     });
-    //   }
-    // });
   }
 
   @override
