@@ -46,3 +46,6 @@ app.*.map.json
 /android/app/release
 
 note.dart
+note2.dart
+note3.dart
+note4.dart
