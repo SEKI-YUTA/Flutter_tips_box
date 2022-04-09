@@ -28,8 +28,6 @@ class FlowFloatingButtonPage extends StatelessWidget {
               child: FlowButton(),
             ),
           ),
-          Positioned(top: 100, left: 100, child: Text("Hello")),
-          Positioned(bottom: 100, child: Text("World")),
         ],
       ),
     );
@@ -56,7 +54,7 @@ class _FlowButtonState extends State<FlowButton>
     Icons.notifications,
     Icons.settings,
     Icons.menu
-  ];
+  ].reversed.toList();
 
   void _updateMenu(IconData icon) {
     if (icon != Icons.menu) {
@@ -127,7 +125,7 @@ class FlowButtonDelegate extends FlowDelegate {
   @override
   void paintChildren(FlowPaintingContext context) {
     double dx = 0.0;
-    for (int i = 0; i < context.childCount; i++) {
+    for (int i = context.childCount - 1; i >= 0; i--) {
       dx = context.getChildSize(i)!.width * i;
       context.paintChild(i,
           transform: Matrix4.translationValues(
