@@ -19,6 +19,7 @@ import 'package:tips_box/screens/mask_text_screen.dart';
 import 'package:tips_box/screens/my_animation_screen.dart';
 import 'package:tips_box/screens/parallax_list_screen.dart';
 import 'package:tips_box/screens/photo_filter_screen.dart';
+import 'package:tips_box/screens/shimmer_screen.dart';
 import 'package:tips_box/screens/slidable_list_screent.dart';
 import 'package:tips_box/screens/stream_api_call.dart';
 import 'package:tips_box/widget/NeumophismButton.dart';
@@ -26,6 +27,8 @@ import 'package:tips_box/widget/animated_title.dart';
 import 'package:tips_box/widget/call_phone_widget.dart';
 import 'package:tips_box/widget/clip_path_widget.dart';
 import 'package:tips_box/widget/cross_fade_widget.dart';
+import 'package:tips_box/pages/flow_floating_page.dart';
+import 'package:tips_box/widget/horizontal_selector_widget.dart';
 import 'package:tips_box/widget/like_button.dart';
 import 'package:tips_box/widget/linear_flow_widget.dart';
 
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: FlowFloatingButtonPage(),
     );
   }
 }
@@ -77,20 +80,13 @@ class MainPage extends StatelessWidget {
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
       //     children: [
-      //       // CrossFadeWidget(),
-      //       // ResponsiveLayout(),
-      //       // DragAndDropScreen(),
-      //       ClipPathWidget(),
-      //       AnimatedTitle(),
-      //       LikeButton(),
-      //       NeumophismButton(),
-      //       CallPhoneWidget()
+      //       HorizontalSelector(),
       //     ],
       //   ),
       // ),
       // body: MyAnimationScreen(
       //     statusBarHeight: MediaQuery.of(context).padding.top),
-      body: PhotoFilterSection(),
+      body: HorizontalSelector(),
     );
   }
 }
