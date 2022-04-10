@@ -18,6 +18,7 @@ import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
 import 'package:tips_box/screens/mask_text_screen.dart';
 import 'package:tips_box/screens/my_animation_screen.dart';
+import 'package:tips_box/screens/parallax_list_horizontal_screen.dart';
 import 'package:tips_box/screens/parallax_list_screen.dart';
 import 'package:tips_box/screens/photo_filter_screen.dart';
 import 'package:tips_box/screens/shimmer_screen.dart';
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: FlowFloatingButtonPage2(),
+      home: MainPage(),
     );
   }
 }
@@ -87,7 +88,7 @@ class MainPage extends StatelessWidget {
       // ),
       // body: MyAnimationScreen(
       //     statusBarHeight: MediaQuery.of(context).padding.top),
-      body: HorizontalSelector(),
+      body: ParallaxListHorizontalScreen(),
     );
   }
 }
