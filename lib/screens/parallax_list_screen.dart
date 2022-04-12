@@ -11,22 +11,22 @@ class ParallaxListScreen extends StatelessWidget {
           children: [
             ParallaxListItem(
                 name: "Some where",
-                country: "earch",
+                country: "earth",
                 imageUrl:
                     "https://images.unsplash.com/photo-1649329409377-b91999d1c298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"),
             ParallaxListItem(
                 name: "Some where",
-                country: "earch",
+                country: "earth",
                 imageUrl:
                     "https://images.unsplash.com/photo-1649329409377-b91999d1c298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"),
             ParallaxListItem(
                 name: "Some where",
-                country: "earch",
+                country: "earth",
                 imageUrl:
                     "https://images.unsplash.com/photo-1649329409377-b91999d1c298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"),
             ParallaxListItem(
                 name: "Some where",
-                country: "earch",
+                country: "earth",
                 imageUrl:
                     "https://images.unsplash.com/photo-1649329409377-b91999d1c298?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"),
           ],
@@ -157,7 +157,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
     final listItemSize = context.size;
     final childRect =
         verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
-
+    print("childRect: ${childRect}");
     context.paintChild(0,
         transform:
             Transform.translate(offset: Offset(0.0, childRect.top)).transform);
