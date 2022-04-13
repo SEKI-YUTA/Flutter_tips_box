@@ -14,7 +14,6 @@ class FlowFloatingButtonPage2 extends StatelessWidget {
         title: const Text("Flow Floating Button"),
       ),
       body: _buildBody(context),
-      // floatingActionButton: FlowButton(),
     );
   }
 
@@ -82,7 +81,6 @@ class _FlowButtonState extends State<FlowButton>
     return Container(
       width: buttonSize,
       height: buttonSize,
-      // padding: widget.padding,
       child: RawMaterialButton(
         fillColor: lastTapped == icon ? Colors.amber[700] : iconColor,
         splashColor: Colors.amber[100],
@@ -94,13 +92,14 @@ class _FlowButtonState extends State<FlowButton>
           buttonAnimationController.status == AnimationStatus.completed
               ? buttonAnimationController.reverse()
               : buttonAnimationController.forward();
-
           // ここにボタンを押したときの処理を書く
           if (index == 0) {
             print("homeButton");
+            // ホームボタンを押したときの処理
           }
           if (index == 2) {
             print("notifications");
+            // 通知ボタンを押したときの処理
           }
         },
         child: Icon(
