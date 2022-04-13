@@ -21,7 +21,7 @@ class _RotationCardState extends State<RotationCard> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    print("width: ${width}");
+    print("width: $width");
     return GestureDetector(
         onTap: flip,
         onLongPress: () {
@@ -43,7 +43,6 @@ class _RotationCardState extends State<RotationCard> {
                 transform: Matrix4.identity()..rotateY(val),
                 child: Container(
                   margin: const EdgeInsets.only(top: 20),
-                  // height: 300,
                   height: 120,
                   width: width,
                   decoration: BoxDecoration(
@@ -53,7 +52,7 @@ class _RotationCardState extends State<RotationCard> {
                       BoxShadow(
                           blurRadius: 10,
                           color: Colors.black.withOpacity(0.3),
-                          offset: Offset(5, 5))
+                          offset: const Offset(5, 5))
                     ],
                   ),
                   child: isFront
