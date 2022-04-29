@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tips_box">
+    <uses-permission android:name="android.permission.VIBRATE"/>
     <queries>
 
             <!-- If your app opens https URLs -->
