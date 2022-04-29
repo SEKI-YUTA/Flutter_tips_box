@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tips_box/layout/responsive_layout.dart';
+import 'package:tips_box/pages/StaggerdAnimation.dart';
+import 'package:tips_box/pages/button_animation_page.dart';
 import 'package:tips_box/pages/edge_detection_page.dart';
 import 'package:tips_box/pages/flow_floating_page2.dart';
 import 'package:tips_box/pages/my_scaffold_3d.dart';
@@ -16,6 +18,7 @@ import 'package:tips_box/screens/download_list_screen.dart';
 import 'package:tips_box/screens/drag_and_drop_screen.dart';
 import 'package:tips_box/screens/future_api_call.dart';
 import 'package:tips_box/screens/grid_screen.dart';
+import 'package:tips_box/screens/list_screen.dart';
 import 'package:tips_box/screens/mask_text_screen.dart';
 import 'package:tips_box/screens/my_animation_screen.dart';
 import 'package:tips_box/screens/parallax_list_horizontal_screen.dart';
@@ -88,7 +91,7 @@ class MainPage extends StatelessWidget {
       // ),
       // body: MyAnimationScreen(
       //     statusBarHeight: MediaQuery.of(context).padding.top),
-      body: ParallaxListHorizontalScreen(),
+      body: ListScreen(),
     );
   }
 }
