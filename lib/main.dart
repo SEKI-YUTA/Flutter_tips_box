@@ -10,6 +10,7 @@ import 'package:tips_box/pages/my_scaffold_3d.dart';
 import 'package:tips_box/pages/navigation_drawer_3d.dart';
 import 'package:tips_box/pages/navigation_drawer_joke.dart';
 import 'package:tips_box/pages/navigation_drawer_rotated.dart';
+import 'package:tips_box/pages/save_state_page.dart';
 import 'package:tips_box/pages/search_bar_page.dart';
 import 'package:tips_box/pages/sliver_appbar_page.dart';
 import 'package:tips_box/screens/basic_api_call.dart';
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+      home: SaveStatePage(),
     );
   }
 }
